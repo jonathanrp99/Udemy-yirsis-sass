@@ -29,6 +29,7 @@ select {
 
 .info {
   text-align: center;
+  width: 45%;
 }
 
 h2 {
@@ -46,7 +47,7 @@ h3 .crypto {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-h3 .coin {
+h3 .currency {
   background: -webkit-linear-gradient(0deg, rgb(63, 189, 225) 0%, rgb(72, 99, 136) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

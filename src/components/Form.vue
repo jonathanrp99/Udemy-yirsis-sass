@@ -1,13 +1,13 @@
 <template>
-    <div class="">
-      <form>
+    <div>
+      <form @submit.prevent="$emit('infoCurrency', crypto, currency)">
         <div>
           <label>
             National currency: 
           </label>
-          <select>
+          <select v-model="currency" required>
             <option value="" disabled selected>
-              Select a coin
+              Select a currency
             </option>
             <option>EUR</option>
             <option>USD</option>
@@ -18,9 +18,9 @@
           <label>
             Crypto currency: 
           </label>
-          <select>
+          <select v-model="crypto" required>
             <option value="" disabled selected>
-              Select a coin
+              Select a currency
             </option>
             <option>BTC</option>
             <option>ETH</option>
@@ -37,7 +37,11 @@
   </template>
   
   <script setup>
-  
+import { ref } from "@vue/reactivity";
+
+    const currency = ref("")
+    const crypto = ref("")
+
   </script>
   
   <style>

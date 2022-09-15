@@ -1,9 +1,14 @@
 <template>
 <div class="container">
-  <h1>Cotizador de criptos</h1>
+  <h1>Crypto quoter</h1>
   <Grid>
-    <Form />
-    <Data />
+    <Form @info-currency="obtain" />
+    <Data 
+    :crypto="info.crypto"
+    :currency="info.currency"
+    :img="info.img"
+    :price="info.price"
+    />
   </Grid>
 </div>
 </template>
@@ -13,8 +18,40 @@
 </style>>
 
 
-<script setup>
+<script>
   import Form from "./components/Form.vue"
   import Data from "./components/Data.vue"
   import Grid from "./components/Grid.vue"
+  
+  export default {
+  // if someone is interested in why did i use vue 2 syntax here is beacause i wasnt able to make the names change when you pick a currency
+  components: { Form, Data, Grid },
+  data: () => ({
+    info: {
+      crypto: "*",
+      currency: "*",
+      img: "",
+      price: 0,
+    },
+  }),
+  methods: {
+    async obtain(crypto, currency) {
+      const response = await fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ encodeURI(crypto) }&tsyms=${ encodeURI (currency) }`)
+      const { RAW } = await response.json()
+      const dataCrypto = RAW[crypto]
+      const data = dataCrypto[currency]
+      console.log(data)
+
+      this.info.crypto = crypto
+      this.info.currency = currency
+      this.info.img = data.IMAGEURL
+      this.info.price = data.PRICE
+
+   }
+  }
+}
 </script>
+
+<style>
+
+</style>

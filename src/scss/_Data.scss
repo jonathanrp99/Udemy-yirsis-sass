@@ -1,5 +1,6 @@
 .info {
     text-align: center;
+    width: 45%;
 }
 
 h2 {
@@ -17,7 +18,7 @@ h3 {
         -webkit-text-fill-color: transparent;
     }
 
-    & .coin {
+    & .currency {
       background: -webkit-linear-gradient(0deg, rgba(63,189,225,1) 0%, rgb(72, 99, 136) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
