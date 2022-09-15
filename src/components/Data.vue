@@ -6,7 +6,7 @@
        -
     <span class="currency">{{currency}}</span>
     </h3>
-    <img :src="`https://www.cryptocompare.com/media/37746238/eth.png`">
+    <img :src="`https://www.cryptocompare.com${img}`">
     <p>
       Price: <strong>{{price}}</strong>
     </p>

@@ -30,7 +30,7 @@
     info: {
       crypto: "*",
       currency: "*",
-      img: "",
+      img: "/media/37746251/btc.png",
       price: 0,
     },
   }),
