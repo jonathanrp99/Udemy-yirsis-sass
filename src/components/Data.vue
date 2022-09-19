@@ -8,13 +8,14 @@
     </h3>
     <img :src="`https://www.cryptocompare.com${img}`">
     <p>
-      Price: <strong>{{price}}</strong>
+      Price: <strong>{{price}} $</strong>
     </p>
   </div>
 </template>
 
-<script setup>
-  const props = defineProps({
+<script>
+export default {
+  props: {
     crypto: {
       type: String,
       required: true,
@@ -23,7 +24,7 @@
       type: String,
       required: true,
     },
-    image: {
+    img: {
       type: String,
       required: true,
     },
@@ -31,5 +32,7 @@
       type: Number,
       required: true,
     },
-  })
+  },
+};
 </script>
+

@@ -11,6 +11,7 @@
     />
   </Grid>
 </div>
+<ReloadPrompt />
 </template>
 
 <style scoped>
@@ -22,10 +23,11 @@
   import Form from "./components/Form.vue"
   import Data from "./components/Data.vue"
   import Grid from "./components/Grid.vue"
+  import ReloadPrompt from "./components/ReloadPrompt.vue"
   
   export default {
   // if someone is interested in why did i use vue 2 syntax here is beacause i wasnt able to make the names change when you pick a currency
-  components: { Form, Data, Grid },
+  components: { Form, Data, Grid, ReloadPrompt },
   data: () => ({
     info: {
       crypto: "*",
